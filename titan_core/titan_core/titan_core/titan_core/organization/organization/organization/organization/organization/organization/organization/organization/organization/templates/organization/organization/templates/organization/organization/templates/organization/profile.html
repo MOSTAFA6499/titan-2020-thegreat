@@ -1,0 +1,17 @@
+{% extends 'organization/base.html' %}
+{% block title %}پروفایل{% endblock %}
+{% block content %}
+<div class="card">
+    <div class="card-header">پروفایل کاربری</div>
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="first_name" value="{{ user.first_name }}" placeholder="نام">
+            <input type="text" name="last_name" value="{{ user.last_name }}" placeholder="نام خانوادگی">
+            <input type="email" name="email" value="{{ user.email }}" placeholder="ایمیل">
+            <input type="text" name="phone" value="{{ user.phone }}" placeholder="شماره موبایل">
+            <button type="submit">ذخیره</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
