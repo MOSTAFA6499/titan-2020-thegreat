@@ -1,0 +1,13 @@
+{% extends 'organization/base.html' %}
+{% block title %}داشبورد{% endblock %}
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h3>خوش آمدید {{ user.username }}</h3>
+    </div>
+    <div class="card-body">
+        <p>نقش شما: {{ user.get_role_display }}</p>
+        <p>تیم: {{ user.team.get_name_display|default:"بدون تیم" }}</p>
+    </div>
+</div>
+{% endblock %}
